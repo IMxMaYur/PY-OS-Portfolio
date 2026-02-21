@@ -1,69 +1,114 @@
-# Mayur Giri Portfolio
+# 🖥️ PY-OS Portfolio — Mayur Giri
 
-Welcome to the **Mayur Giri Portfolio** — a modern, fast, and secure personal portfolio website built using **React.js**, **Next.js**, and **TypeScript**.
+> *A retro operating system simulation built as a personal portfolio.*
 
-This portfolio showcases my skills, projects, and experience as a developer while implementing industry-standard security practices to protect both users and the application.
+**PY-OS v2.6** mimics the look and feel of a classic 80s/90s terminal OS — with a boot sequence, draggable windows, a taskbar, and a full mobile shell — all built as a modern Next.js app with zero UI libraries; just custom CSS and pure React.
 
----
-
-## 📂 Features
-
-✔ Built with **React.js + Next.js + TypeScript** for scalability and performance  
-✔ Fully static export with optimized loading  
-✔ Responsive and mobile-friendly design  
-✔ Strong **security headers** implemented (HSTS, CSP, COOP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy)  
-✔ **Code obfuscation** and **source map disabling** to make source code harder to reverse-engineer  
-✔ Configured for **Vercel deployment** with HTTPS enforced  
-✔ Privacy-first settings with restricted permissions and strict referrer policies  
-✔ SEO optimized and fast performance  
+🔗 **Live:** [mayurgiri.vercel.app](https://mayurgiri.vercel.app) &nbsp;|&nbsp; 📄 **Resume:** available via `RESUME.EXE` in the OS
 
 ---
 
-## 🔐 Security Measures Implemented
+## ✨ Features
 
-This portfolio takes security seriously and includes the following measures:
-
-### HTTP Headers
-- **Strict-Transport-Security (HSTS):** Forces HTTPS connections for secure communication
-- **Content-Security-Policy (CSP):** Restricts where scripts and styles can be loaded from
-- **Cross-Origin-Opener-Policy (COOP):** Isolates pages from cross-origin attacks
-- **X-Frame-Options:** Prevents clickjacking by disallowing the site from being embedded in iframes
-- **X-Content-Type-Options:** Stops browsers from MIME-sniffing content types
-- **Referrer-Policy:** Controls how referrer data is sent to other sites to enhance privacy
-- **Permissions-Policy:** Disables access to sensitive browser APIs like geolocation, camera, and microphone
-
-### Code Protection
-- **Obfuscation:** JavaScript code is transformed to make it harder to read
-- **Source Maps Disabled:** Prevents exposing original source files in production
-- **Minimal External Resource Loading:** All scripts and styles are restricted to trusted sources
-- **No sensitive data stored in client-side code**
-
-⚠ Note: Complete protection from code inspection is not possible on the web. These measures aim to deter casual code scraping and unauthorized reuse while maintaining user experience.
+| Feature | Details |
+|---|---|
+| 🖥️ **Boot Screen** | Animated 0→100% progress bar with live % counter and "BOOT COMPLETE" message |
+| 🪟 **Draggable Windows** | Fully draggable, closeable windows on desktop |
+| 📱 **Mobile Shell** | Dedicated mobile UI with full-screen app view |
+| 🎨 **4 CRT Themes** | Green Phosphor, Amber, White Monochrome, Matrix Green |
+| 🌌 **5 Wallpapers** | Matrix Rain, Starfield, Retro Grid, Binary, Solid |
+| 🕹️ **3 Playable Games** | Snake, Tetris, Pong — with high-score tracking |
+| 🔙 **Back Navigation** | `[← HOME]` button on desktop and mobile returns to welcome screen |
+| 💾 **Resume Download** | Direct PDF download from `RESUME.EXE` |
+| 📡 **Live GitHub Stats** | `ABOUT.INFO` fetches real-time GitHub API data |
+| ⌨️ **Terminal** | Interactive terminal with typed commands |
 
 ---
 
-## 🚀 Tech Stack
+## �️ Windows / Apps
 
-| Technology  | Version / Purpose |
-|-------------|------------------|
-| React.js    | UI framework |
-| Next.js     | Server-side rendering & static export |
-| TypeScript  | Type safety and scalability |
-| Vercel      | Hosting & CDN with HTTPS enforcement |
-| Terser/Webpack Obfuscator | Code obfuscation |
-| Security Headers | Protect against XSS, clickjacking, etc. |
+```
+ABOUT.EXE       — Bio, GitHub live stats, strengths
+PROJECTS.EXE    — 6 projects with screenshots & case studies
+SKILLS.DAT      — Skill bars by category
+CAREER.LOG      — Timeline of experience & education
+CERTIFICATIONS  — Certificates & learning credentials
+RESUME.EXE      — Download MAYUR-GIRI-RESUME.pdf
+CONTACT.INI     — Contact form (opens mailto)
+TERMINAL.EXE    — Interactive command-line interface
+SETTINGS.EXE    — Switch themes and wallpapers
+GAMES.EXE       — Launch Snake, Tetris, or Pong
+```
 
 ---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript |
+| Styling | Custom CSS (`pyos.css`) — zero Tailwind classes |
+| Font | VT323 (Google Fonts — bitmap terminal font) |
+| State | React `useState` / `useEffect` hooks |
+| Deployment | Vercel |
+
+---
+
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/IMxMaYur/PY-OS-Portfolio.git
+cd PY-OS-Portfolio
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) — it auto-redirects to `/pyos`.
+
+---
+
+## 📁 Project Structure
+
+```
+app/
+  pyos/           # Main PY-OS page + layout
+  layout.tsx      # Root layout (SEO metadata)
+  page.tsx        # Redirects / → /pyos
+
+components/pyos/
+  BootScreen.tsx      # Boot animation
+  WelcomeScreen.tsx   # Welcome / login screen
+  Desktop.tsx         # Desktop with taskbar & windows
+  MobileShell.tsx     # Mobile-optimized UI
+  Window.tsx          # Draggable window component
+  windows/            # Individual app windows
+  hooks/              # useHighScore, useGitHubStats
+
+data/
+  projects.ts         # Project details & thumbnails
+  skills.tsx          # Skill categories & levels
+  experience.tsx      # Career timeline data
+  certifications.ts   # Certificates list
+
+public/
+  MAYUR-GIRI-RESUME.pdf
+  *.webp              # Project screenshots
+```
+
+---
+
 ## 📞 Contact
 
-Feel free to reach out if you want to connect or collaborate:
+| | |
+|---|---|
+| 📧 Email | work.mayurgiri@gmail.com |
+| � LinkedIn | [linkedin.com/in/mayurgiri](https://linkedin.com/in/mayurgiri) |
+| 🐙 GitHub | [github.com/IMxMaYur](https://github.com/IMxMaYur) |
+| 🌐 Portfolio | [mayurgiri.vercel.app](https://mayurgiri.vercel.app) |
 
-📧 Email: [work.mayurgiri@gmail.com]
-
-🔗 Portfolio: https://mayurgiri.vercel.app
-
-💼 LinkedIn: [https://linkedin.com/in/mayurgiri]
+---
 
 ## 📜 License
 
-© 2025 Mayur Giri. All rights reserved. Unauthorized reproduction or reuse of code is prohibited.
+© 2026 Mayur Giri · All rights reserved.
