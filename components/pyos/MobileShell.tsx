@@ -14,7 +14,6 @@ import { SettingsWindow } from "@/components/pyos/windows/SettingsWindow"
 import { GamesWindow } from "@/components/pyos/windows/GamesWindow"
 import { SnakeGame } from "@/components/pyos/windows/SnakeGame"
 import { TetrisGame } from "@/components/pyos/windows/TetrisGame"
-import { PongGame } from "@/components/pyos/windows/PongGame"
 import { Wallpapers } from "@/components/pyos/Wallpapers"
 
 const MENU_ITEMS: { id: WindowId; emoji: string; label: string; desc: string }[] = [
@@ -46,7 +45,26 @@ function PanelContent({ id, state }: { id: WindowId; state: PyOSState }) {
         case "games": return <GamesWindow openWindow={state.openWindow} />
         case "snake": return <SnakeGame />
         case "tetris": return <TetrisGame />
-        case "pong": return <PongGame />
+        case "pong": return (
+            <div style={{ textAlign: "center", padding: "40px 20px" }}>
+                <div style={{ fontSize: 48, marginBottom: 16 }}>🏓</div>
+                <div style={{ color: "var(--pyos-yellow)", fontSize: 22, marginBottom: 12, letterSpacing: 1 }}>
+                    PONG.EXE — ACCESS DENIED
+                </div>
+                <div style={{ color: "var(--pyos-fg-dim)", fontSize: 16, lineHeight: 1.8, marginBottom: 24 }}>
+                    ╔══════════════════════════════╗<br />
+                    ║  NOT OPTIMISED FOR MOBILE   ║<br />
+                    ╚══════════════════════════════╝
+                </div>
+                <div style={{ color: "var(--pyos-fg)", fontSize: 16, lineHeight: 1.8 }}>
+                    Pong requires a keyboard &amp; mouse<br />
+                    for the best experience.<br /><br />
+                    <span style={{ color: "var(--pyos-accent)" }}>
+                        Please switch to desktop view<br />to play this game.
+                    </span>
+                </div>
+            </div>
+        )
         default: return null
     }
 }
