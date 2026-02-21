@@ -1,0 +1,1009 @@
+/* ═══════════════════════════════════════════════
+   PY-OS Retro Portfolio — Global Stylesheet
+   ══════════════════════════════════════════════ */
+
+/* ── Tokens ─────────────────────────────────── */
+:root {
+  --pyos-bg: #0a1228;
+  --pyos-desktop: #000080;
+  --pyos-accent: #00ff41;
+  --pyos-fg: #b0ffb0;
+  --pyos-fg-dim: #5a9a5a;
+  --pyos-yellow: #ffff00;
+  --pyos-border: #00aa00;
+  --pyos-titlebar: #000080;
+  --pyos-titlebar-act: #0000cc;
+  --pyos-font: 'VT323', 'Courier New', monospace;
+}
+
+[data-theme="amber"] {
+  --pyos-accent: #ffb000;
+  --pyos-fg: #ffd080;
+  --pyos-fg-dim: #aa6600;
+  --pyos-border: #cc7700;
+  --pyos-titlebar-act: #551100;
+}
+
+[data-theme="white"] {
+  --pyos-accent: #ffffff;
+  --pyos-fg: #cccccc;
+  --pyos-fg-dim: #777777;
+  --pyos-border: #666666;
+  --pyos-titlebar-act: #333333;
+}
+
+[data-theme="matrix"] {
+  --pyos-bg: #000800;
+  --pyos-desktop: #001200;
+  --pyos-accent: #00ff00;
+  --pyos-fg: #00cc00;
+  --pyos-fg-dim: #005500;
+  --pyos-border: #003300;
+  --pyos-titlebar-act: #002200;
+}
+
+/* ── Root ─────────────────────────────────── */
+.pyos-root {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--pyos-bg);
+  color: var(--pyos-fg);
+  font-family: var(--pyos-font);
+  font-size: 18px;
+  line-height: 1.4;
+  overflow: hidden;
+  position: relative;
+}
+
+/* CRT scanlines overlay */
+.pyos-root::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.07) 2px,
+      rgba(0, 0, 0, 0.07) 4px);
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ── Boot Screen ─────────────────────────────── */
+.boot-screen {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8vw;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.boot-line {
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.boot-ok {
+  color: #00ff41;
+}
+
+.boot-progress-wrap {
+  margin-top: 24px;
+  max-width: min(500px, 80vw);
+  border: 1px solid #444;
+  height: 14px;
+  background: #111;
+}
+
+.boot-progress-bar {
+  height: 100%;
+  background: #00ff41;
+  transition: width 2.4s linear;
+}
+
+/* ── Welcome Screen ──────────────────────────── */
+.welcome-screen {
+  width: 100%;
+  height: 100vh;
+  background: var(--pyos-desktop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-panel {
+  border: 2px solid var(--pyos-accent);
+  padding: 40px 56px;
+  text-align: center;
+  max-width: 560px;
+  width: 90%;
+  background: var(--pyos-bg);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.15);
+}
+
+.welcome-title {
+  font-size: 44px;
+  color: var(--pyos-accent);
+  margin: 0 0 6px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 14px var(--pyos-accent), 0 0 28px rgba(0, 255, 65, 0.4);
+}
+
+.welcome-role {
+  font-size: 22px;
+  color: var(--pyos-yellow);
+  margin-bottom: 16px;
+}
+
+.welcome-desc {
+  font-size: 17px;
+  color: var(--pyos-fg-dim);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.welcome-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ─────────────────────────────────── */
+.pyos-btn {
+  background: var(--pyos-accent);
+  color: #000;
+  border: none;
+  padding: 8px 28px;
+  font-family: var(--pyos-font);
+  font-size: 20px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  min-height: 44px;
+}
+
+.pyos-btn:hover {
+  background: var(--pyos-yellow);
+}
+
+.pyos-btn-outline {
+  background: transparent;
+  color: var(--pyos-accent);
+  border: 2px solid var(--pyos-accent);
+  padding: 8px 28px;
+  font-family: var(--pyos-font);
+  font-size: 20px;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.pyos-btn-outline:hover {
+  background: var(--pyos-accent);
+  color: #000;
+}
+
+.pyos-btn-sm {
+  background: transparent;
+  border: 1px solid var(--pyos-border);
+  color: var(--pyos-accent);
+  padding: 4px 14px;
+  font-family: var(--pyos-font);
+  font-size: 17px;
+  cursor: pointer;
+  min-height: 36px;
+}
+
+.pyos-btn-sm:hover {
+  background: rgba(0, 255, 65, 0.1);
+}
+
+/* ── Desktop ─────────────────────────────────── */
+.pyos-desktop {
+  width: 100%;
+  height: 100vh;
+  background: var(--pyos-desktop);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pyos-wallpaper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.pyos-taskbar {
+  position: relative;
+  z-index: 100;
+  background: #000070;
+  border-bottom: 2px solid var(--pyos-accent);
+  display: flex;
+  align-items: stretch;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.pyos-taskbar-brand {
+  padding: 0 16px;
+  color: var(--pyos-yellow);
+  font-size: 20px;
+  border-right: 1px solid var(--pyos-accent);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.pyos-tab {
+  padding: 0 20px;
+  color: var(--pyos-fg-dim);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-right: 1px solid #333;
+  background: transparent;
+  font-family: inherit;
+}
+
+.pyos-tab:hover {
+  color: var(--pyos-fg);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pyos-tab.active {
+  color: var(--pyos-accent);
+  background: rgba(0, 255, 65, 0.08);
+  border-bottom: 2px solid var(--pyos-accent);
+}
+
+.pyos-clock {
+  padding: 0 14px;
+  color: var(--pyos-yellow);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #333;
+}
+
+.pyos-taskbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border-left: 1px solid #333;
+}
+
+.pyos-icon-grid {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  padding: 20px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 12px 20px;
+}
+
+.pyos-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 76px;
+  cursor: pointer;
+  padding: 8px 4px;
+  border: 2px solid transparent;
+  background: transparent;
+  font-family: inherit;
+  color: var(--pyos-fg);
+  text-align: center;
+}
+
+.pyos-icon:hover,
+.pyos-icon:focus {
+  border-color: var(--pyos-accent);
+  background: rgba(0, 255, 65, 0.08);
+  outline: none;
+}
+
+.pyos-icon-emoji {
+  font-size: 30px;
+  margin-bottom: 4px;
+}
+
+.pyos-icon-label {
+  font-size: 13px;
+  color: var(--pyos-fg);
+  text-shadow: 1px 1px 0 #000;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+/* ── Window ──────────────────────────────────── */
+.pyos-window {
+  position: absolute;
+  border: 2px solid var(--pyos-border);
+  background: var(--pyos-bg);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.pyos-window.active {
+  border-color: var(--pyos-accent);
+  z-index: 200;
+}
+
+.pyos-window-titlebar {
+  background: var(--pyos-titlebar);
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--pyos-border);
+}
+
+.pyos-window-titlebar:active {
+  cursor: grabbing;
+}
+
+.pyos-window.active .pyos-window-titlebar {
+  background: var(--pyos-titlebar-act);
+}
+
+.pyos-window-title {
+  color: var(--pyos-fg);
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.pyos-window-close {
+  background: transparent;
+  border: 1px solid var(--pyos-fg-dim);
+  color: var(--pyos-fg);
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.pyos-window-close:hover {
+  background: #aa0000;
+  border-color: #ff0000;
+  color: #fff;
+}
+
+.pyos-window-min {
+  background: transparent;
+  border: 1px solid var(--pyos-fg-dim);
+  color: var(--pyos-fg);
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.pyos-window-min:hover {
+  background: #005500;
+  border-color: var(--pyos-accent);
+}
+
+.pyos-window-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pyos-accent) #111;
+}
+
+.pyos-window-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pyos-window-body::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.pyos-window-body::-webkit-scrollbar-thumb {
+  background: var(--pyos-accent);
+}
+
+/* ── Mobile Shell ────────────────────────────── */
+.pyos-mobile-shell {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--pyos-desktop);
+  display: flex;
+  flex-direction: column;
+}
+
+.pyos-mobile-header {
+  background: #000070;
+  border-bottom: 2px solid var(--pyos-accent);
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.pyos-mobile-brand {
+  color: var(--pyos-yellow);
+  font-size: 20px;
+}
+
+.pyos-mobile-prompt {
+  padding: 12px 16px;
+  color: var(--pyos-fg-dim);
+  font-size: 17px;
+}
+
+.pyos-mobile-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 8px 24px;
+}
+
+.pyos-mobile-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 12px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.12);
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--pyos-accent);
+  min-height: 52px;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.pyos-mobile-item:hover,
+.pyos-mobile-item:focus {
+  background: rgba(0, 255, 65, 0.07);
+  outline: none;
+}
+
+.pyos-mobile-arrow {
+  margin-right: 10px;
+  color: var(--pyos-fg-dim);
+}
+
+.pyos-mobile-panel {
+  position: fixed;
+  inset: 0;
+  background: var(--pyos-bg);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pyos-mobile-panel-header {
+  background: #000070;
+  border-bottom: 2px solid var(--pyos-accent);
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.pyos-mobile-panel-title {
+  color: var(--pyos-accent);
+  font-size: 19px;
+}
+
+.pyos-mobile-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pyos-accent) #111;
+}
+
+/* ── Shared Content ──────────────────────────── */
+.pyos-section-title {
+  color: var(--pyos-accent);
+  font-size: 22px;
+  border-bottom: 1px dashed var(--pyos-border);
+  padding-bottom: 4px;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px var(--pyos-accent);
+}
+
+.pyos-kv {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.pyos-key {
+  color: var(--pyos-yellow);
+  font-size: 16px;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.pyos-val {
+  color: var(--pyos-fg);
+  font-size: 16px;
+}
+
+.pyos-dim {
+  color: var(--pyos-fg-dim);
+}
+
+.pyos-accent-text {
+  color: var(--pyos-accent);
+}
+
+.pyos-yellow-text {
+  color: var(--pyos-yellow);
+}
+
+.pyos-bar-wrap {
+  width: 100%;
+  height: 10px;
+  background: #111;
+  border: 1px solid var(--pyos-border);
+  margin-top: 3px;
+}
+
+.pyos-bar-fill {
+  height: 100%;
+  background: var(--pyos-accent);
+}
+
+.pyos-divider {
+  border: none;
+  border-top: 1px dashed var(--pyos-border);
+  margin: 12px 0;
+}
+
+.pyos-tag {
+  display: inline-block;
+  border: 1px solid var(--pyos-border);
+  color: var(--pyos-fg-dim);
+  font-size: 13px;
+  padding: 1px 6px;
+  margin: 2px;
+}
+
+/* Project grid */
+.pyos-proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 10px;
+}
+
+.pyos-proj-card {
+  border: 1px solid var(--pyos-border);
+  padding: 12px;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
+  color: var(--pyos-fg);
+  text-align: left;
+  width: 100%;
+}
+
+.pyos-proj-card:hover {
+  border-color: var(--pyos-accent);
+  background: rgba(0, 255, 65, 0.04);
+}
+
+.pyos-proj-name {
+  color: var(--pyos-accent);
+  font-size: 17px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pyos-proj-desc {
+  font-size: 14px;
+  color: var(--pyos-fg-dim);
+  line-height: 1.3;
+}
+
+.pyos-proj-badge {
+  color: var(--pyos-yellow);
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Terminal */
+.pyos-terminal {
+  background: #000;
+  padding: 10px;
+  min-height: 180px;
+  font-size: 17px;
+}
+
+.pyos-terminal-out {
+  color: var(--pyos-accent);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.pyos-terminal-err {
+  color: #ff4444;
+  line-height: 1.7;
+}
+
+.pyos-terminal-row {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.pyos-terminal-ps1 {
+  color: var(--pyos-yellow);
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+.pyos-terminal-inp {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--pyos-accent);
+  font-family: var(--pyos-font);
+  font-size: 17px;
+  flex: 1;
+  caret-color: var(--pyos-accent);
+}
+
+/* Settings */
+.pyos-settings-group {
+  margin-bottom: 22px;
+}
+
+.pyos-option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.pyos-option-row:hover {
+  background: rgba(0, 255, 65, 0.06);
+}
+
+.pyos-option-row.sel {
+  color: var(--pyos-accent);
+}
+
+.pyos-radio {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--pyos-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 9px;
+  color: var(--pyos-accent);
+}
+
+/* Wallpaper: retro grid */
+.wp-retrogrid {
+  background-color: #00001a;
+  background-image:
+    linear-gradient(rgba(0, 255, 65, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.25) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Wallpaper: binary */
+.wp-binary {
+  background: #000806;
+}
+
+/* Games */
+.pyos-game-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pyos-game-hud {
+  color: var(--pyos-yellow);
+  font-size: 18px;
+  text-align: center;
+}
+
+.pyos-game-canvas {
+  border: 2px solid var(--pyos-accent);
+  display: block;
+  image-rendering: pixelated;
+}
+
+.pyos-touch-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.pyos-touch-row {
+  display: flex;
+  gap: 6px;
+}
+
+.pyos-touch-btn {
+  background: transparent;
+  border: 2px solid var(--pyos-accent);
+  color: var(--pyos-accent);
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pyos-touch-btn:active {
+  background: rgba(0, 255, 65, 0.2);
+}
+
+/* Games launcher */
+.pyos-game-launcher {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pyos-game-card {
+  border: 1px solid var(--pyos-border);
+  padding: 14px;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
+  color: var(--pyos-fg);
+  text-align: left;
+  width: 100%;
+  font-size: 17px;
+}
+
+.pyos-game-card:hover {
+  border-color: var(--pyos-accent);
+  background: rgba(0, 255, 65, 0.05);
+}
+
+/* Resume */
+.pyos-resume-box {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.pyos-resume-art {
+  color: var(--pyos-accent);
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  white-space: pre;
+}
+
+/* Contact form */
+.pyos-form-group {
+  margin-bottom: 14px;
+}
+
+.pyos-input-label {
+  color: var(--pyos-yellow);
+  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pyos-input {
+  width: 100%;
+  background: #000;
+  border: 1px solid var(--pyos-border);
+  color: var(--pyos-fg);
+  font-family: var(--pyos-font);
+  font-size: 17px;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.pyos-input:focus {
+  border-color: var(--pyos-accent);
+}
+
+.pyos-textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.pyos-form-msg {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* ── Animations ──────────────────────────────── */
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flicker {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.85;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0.92;
+  }
+
+  21% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0.88;
+  }
+
+  56% {
+    opacity: 1;
+  }
+}
+
+.pyos-cursor-blink {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  color: var(--pyos-accent);
+  margin-left: 2px;
+}
+
+.boot-flicker {
+  animation: flicker 3.5s ease-in-out 1;
+}
+
+/* ── Minimize Dock ───────────────────────────── */
+.pyos-minimize-dock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 34px;
+  background: rgba(0, 0, 80, 0.9);
+  border-top: 1px solid var(--pyos-border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  z-index: 300;
+  overflow-x: auto;
+}
+
+.pyos-minimize-chip {
+  background: rgba(0, 50, 0, 0.6);
+  border: 1px solid var(--pyos-border);
+  color: var(--pyos-fg);
+  font-family: var(--pyos-font);
+  font-size: 15px;
+  padding: 2px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pyos-minimize-chip:hover {
+  border-color: var(--pyos-accent);
+  color: var(--pyos-accent);
+}
+
+/* ── Misc extras ─────────────────────────────── */
+.pyos-link {
+  color: var(--pyos-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pyos-border);
+}
+
+.pyos-link:hover {
+  color: var(--pyos-yellow);
+}
+
+/* Copyright Footer */
+.pyos-footer {
+  position: relative;
+  z-index: 50;
+  text-align: center;
+  padding: 6px 16px;
+  font-size: 13px;
+  color: var(--pyos-fg-dim);
+  border-top: 1px solid rgba(0, 170, 0, 0.2);
+  background: rgba(0, 0, 60, 0.6);
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.pyos-kv-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  align-items: baseline;
+}
+
+.pyos-kv-grid .pyos-key {
+  min-width: 0;
+}
+
+.pyos-terminal-line {
+  line-height: 1.7;
+  white-space: pre-wrap;
+  color: var(--pyos-accent);
+}
+
+.pyos-terminal-cmd {
+  color: var(--pyos-yellow);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pyos-desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .pyos-mobile-shell {
+    display: none !important;
+  }
+}
