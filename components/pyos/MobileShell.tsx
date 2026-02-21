@@ -15,6 +15,7 @@ import { GamesWindow } from "@/components/pyos/windows/GamesWindow"
 import { SnakeGame } from "@/components/pyos/windows/SnakeGame"
 import { TetrisGame } from "@/components/pyos/windows/TetrisGame"
 import { PongGame } from "@/components/pyos/windows/PongGame"
+import { Wallpapers } from "@/components/pyos/Wallpapers"
 
 const MENU_ITEMS: { id: WindowId; emoji: string; label: string; desc: string }[] = [
     { id: "terminal", emoji: "💻", label: "TERMINAL.EXE", desc: "Interactive shell" },
@@ -68,6 +69,7 @@ export function MobileShell({ state }: { state: PyOSState }) {
 
     return (
         <div className="pyos-mobile-shell">
+            <Wallpapers wallpaper={state.wallpaper} />
             <div className="pyos-mobile-header">
                 <span className="pyos-mobile-brand">▶ PY-OS v2.6</span>
                 <span className="pyos-dim" style={{ fontSize: 15 }}>MAYUR GIRI</span>
