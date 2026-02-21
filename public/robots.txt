@@ -1,11 +1,4 @@
-# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://mayurgiri.com/sitemap.xml
-
-# Disallow crawling of admin or private areas
-User-agent: *
-Disallow: /api/
-Disallow: /admin/
+Sitemap: https://mayurgiri.vercel.app/sitemap.xml
