@@ -78,6 +78,10 @@ export const metadata: Metadata = {
   },
 
   category: "technology",
+
+  verification: {
+    google: "aB91dE5REqHmBeWYWvXX2K9HisOjqY1WXGk2KEz2sKw",
+  },
 }
 
 // JSON-LD structured data — Person schema for "Mayur Giri" entity recognition
