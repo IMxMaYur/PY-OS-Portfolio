@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 
-const BASE_URL = "https://mayurgiri.vercel.app"
+const BASE_URL = "https://mayurgiri-py-os.vercel.app"
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "Mayur Giri is an AI Engineer and Full-Stack Developer. Explore his interactive retro OS-themed portfolio with projects, skills, and experience.",
     images: [
       {
-        url: "/mayurg.webp",
+        url: "/mayurgiri.webp",
         width: 1200,
         height: 630,
         alt: "Mayur Giri – AI Engineer & Full-Stack Developer",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "Mayur Giri – AI Engineer & Full-Stack Developer",
     description:
       "AI Engineer and Full-Stack Developer. Explore my interactive retro OS-themed portfolio.",
-    images: ["/mayurg.webp"],
+    images: ["/mayurgiri.webp"],
     creator: "@IMxMaYur",
   },
 
@@ -93,7 +93,7 @@ const personSchema = {
   jobTitle: "AI Engineer & Full-Stack Developer",
   description:
     "AI Engineer and Full-Stack Developer specialising in machine learning, NLP, deep learning, and end-to-end AI solutions.",
-  image: `${BASE_URL}/mayurg.webp`,
+  image: `${BASE_URL}/mayurgiri.webp`,
   email: "work.mayurgiri@gmail.com",
   knowsAbout: [
     "Artificial Intelligence",
@@ -109,7 +109,7 @@ const personSchema = {
   sameAs: [
     "https://github.com/IMxMaYur",
     "https://linkedin.com/in/mayurgiri",
-    "https://mayurgiri.vercel.app",
+    BASE_URL,
   ],
 }
 

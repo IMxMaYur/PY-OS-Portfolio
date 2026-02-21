@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description:
         "Mayur Giri's interactive portfolio — an AI Engineer & Full-Stack Developer. Explore projects, skills, career timeline, and get in touch. Runs as a retro OS experience.",
     alternates: {
-        canonical: "https://mayurgiri.vercel.app",
+        canonical: "https://mayurgiri-py-os.vercel.app",
     },
 }
 

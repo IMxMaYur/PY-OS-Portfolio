@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 
 export const dynamic = "force-static"
 
-const BASE_URL = "https://mayurgiri.vercel.app"
+const BASE_URL = "https://mayurgiri-py-os.vercel.app"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

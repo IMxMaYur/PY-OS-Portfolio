@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mayurgiri.vercel.app/sitemap.xml
+Sitemap: https://mayurgiri-py-os.vercel.app/sitemap.xml
