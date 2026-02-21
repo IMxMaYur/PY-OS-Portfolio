@@ -4,7 +4,7 @@
 
 **PY-OS v2.6** mimics the look and feel of a classic 80s/90s terminal OS — with a boot sequence, draggable windows, a taskbar, and a full mobile shell — all built as a modern Next.js app with zero UI libraries; just custom CSS and pure React.
 
-🔗 **Live:** [mayurgiri.vercel.app](https://mayurgiri.vercel.app) &nbsp;|&nbsp; 📄 **Resume:** available via `RESUME.EXE` in the OS
+🔗 **Live:** [mayurgiri-py-os.vercel.app](https://mayurgiri-py-os.vercel.app) &nbsp;|&nbsp; 📄 **Resume:** available via `RESUME.EXE` in the OS
 
 ---
 
@@ -106,6 +106,7 @@ public/
 | � LinkedIn | [linkedin.com/in/mayurgiri](https://linkedin.com/in/mayurgiri) |
 | 🐙 GitHub | [github.com/IMxMaYur](https://github.com/IMxMaYur) |
 | 🌐 Portfolio | [mayurgiri.vercel.app](https://mayurgiri.vercel.app) |
+| 🌐 Portfolio-2 | [mayurgiri-py-os.vercel.app](https://mayurgiri-py-os.vercel.app) |
 
 ---
 
